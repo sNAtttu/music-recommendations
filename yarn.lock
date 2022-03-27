@@ -7,6 +7,11 @@
   resolved "https://registry.yarnpkg.com/@azure/functions/-/functions-2.0.0.tgz#7fa416bb4b826f190336e59a4ac088b84774537e"
   integrity sha512-FUd0bdmM6LtApr9LNQi1BFpNchrk1FwkzieTSw0XzA9dCr83jI62MxWsM5YIFrDnJS3i2Ry81D78PecukGCL/w==
 
+"@types/node@17.0.23":
+  version "17.0.23"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.23.tgz#3b41a6e643589ac6442bdbd7a4a3ded62f33f7da"
+  integrity sha512-UxDxWn7dl97rKVeVS61vErvw086aCYhDLyvRQZ5Rk65rZKepaFdm53GeqXaKBuOhED4e9uWq34IC3TdSdJJ2Gw==
+
 axios@0.26.1:
   version "0.26.1"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.26.1.tgz#1ede41c51fcf51bbbd6fd43669caaa4f0495aaa9"

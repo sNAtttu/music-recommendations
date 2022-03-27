@@ -2,6 +2,7 @@ const axios = require("axios");
 
 const method = process.argv[2];
 const functionName = process.argv[3];
+
 const localBaseUrl = "http://localhost:7071/api";
 
 const url = `${localBaseUrl}/${functionName}`;
