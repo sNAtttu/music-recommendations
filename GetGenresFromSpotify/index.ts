@@ -1,4 +1,4 @@
-import axios, { Axios, AxiosRequestConfig } from 'axios';
+import axios, { AxiosRequestConfig } from 'axios';
 import { AzureFunction, Context, HttpRequest } from '@azure/functions';
 
 let genres = null;
