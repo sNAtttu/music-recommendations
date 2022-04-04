@@ -16,9 +16,16 @@ const httpTrigger: AzureFunction = async function (context: Context, req: HttpRe
     // Example: black-metal,classic
     const { genres } = req.query;
     const recommendationLimit = 1;
+    const morePopularMinValue = 40;
+    const lessPopularMaxValue = 25;
     context.log(`Fetching recommendations for following genres: ${genres}`);
-    const recommendationUrl = `${fetchRecommendationsUrl}?limit=${recommendationLimit}&seed_genres=${genres}`;
-    const recommendationResponse = await axios.get(recommendationUrl, fetchRecommendationsConfig);
+    const firstRecommendationUrl = `${fetchRecommendationsUrl}?limit=${recommendationLimit}&seed_genres=${genres}&min_popularity=${morePopularMinValue}`;
+    const recommendationResponse = await axios.get(firstRecommendationUrl, fetchRecommendationsConfig);
+
+    const secondRecommendationUrl = `${fetchRecommendationsUrl}?limit=${recommendationLimit}&seed_genres=${genres}&max_popularity=${lessPopularMaxValue}`;
+    const secondRecommendationResponse = await axios.get(secondRecommendationUrl, fetchRecommendationsConfig);
+
+    recommendationResponse.data.tracks.push(secondRecommendationResponse.data.tracks[0]);
 
     context.res = {
         // status: 200, /* Defaults to 200 */
